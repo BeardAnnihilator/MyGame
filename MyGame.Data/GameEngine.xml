@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GameEngine Id="MyGame" Title="My Game" GameSpeed="10" GoogleTrackingCode="UA-12345678-6">
+  <Player Id="Player" FirstName="Jep" LastName="Francois" Email="myemail@gmail.com" Xp="25" />
+  <Items>
+    <Item Id="Cat" IconId="Cat" Description="Cat" />
+    <Item Id="Mouse" IconId="Mouse" Description="Mouse" />
+    <Item Id="TrashBin">
+      <ElementTemplate>
+        <UIPlaceholder AcceptsItems="Cat;Mouse" PlaceholderBehaviour="Trash"/>
+      </ElementTemplate>
+    </Item>
+  </Items>
+  <Scenes>
+    <Scene Id="Scene1" Title="Main Scene">
+      <SubScenes>
+        <SubScene Id="Scene1_SubScene1" Title="Sub scene 1">
+          <UIElements>
+            <UIPlaceholder ItemId="TrashBin" IsDraggable="False" AcceptsItems="TrashBin" />
+            <UIElement Id="Cat" ItemId="Cat" IsDraggable="True" />
+            <UIElement ItemId="Mouse" IsDraggable="True" />
+          </UIElements>
+        </SubScene>
+      </SubScenes>
+    </Scene>
+  </Scenes>
+</GameEngine>
