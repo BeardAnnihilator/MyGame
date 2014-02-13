@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace MyGame.Data.Models
 {
     [XmlRoot]
-    public class GameEngine
+    public sealed class GameEngine : ISetting 
     {
         [XmlAttribute]
         public string Id { get; set; }

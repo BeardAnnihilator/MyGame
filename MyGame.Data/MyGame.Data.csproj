@@ -40,26 +40,33 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IContext.cs" />
+    <Compile Include="IService.cs" />
     <Compile Include="Models\GameEngine.cs" />
+    <Compile Include="Models\ISetting.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Scene.cs" />
+    <Compile Include="Models\GameSetting.cs" />
     <Compile Include="Models\SubScene.cs" />
-    <Compile Include="Models\UIBase.cs" />
     <Compile Include="Models\UIElement.cs" />
     <Compile Include="Models\UIPlaceholder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IGameEngineRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Service.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transformations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="GameEngine.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyGame.Infrastructure\MyGame.Infrastructure.csproj">
+      <Project>{339b089f-b835-44ff-acb6-2049c5803418}</Project>
+      <Name>MyGame.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

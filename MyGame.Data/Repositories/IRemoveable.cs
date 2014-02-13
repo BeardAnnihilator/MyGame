@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyGame.Data.Repositories
 {
-    public class IGameEngineRepository
+    internal interface IRemoveable<T> where T : class
     {
+        void Remove(T entity);
     }
 }

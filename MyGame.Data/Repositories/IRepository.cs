@@ -1,13 +1,9 @@
 ﻿namespace MyGame.Data.Repositories
 {
-    internal interface IRepository<T>
+    internal interface IRepository<T> where T : class
     {
         T Get();
 
         void Update(T entity);
-
-        void Delete(T entity);
-
-        void Create(T entity);
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyGame.Infrastructure
+namespace MyGame.Data.Repositories
 {
-    public class Class1
+    internal interface IAppendable<T> where T : class
     {
+        void Append(T entity);
     }
 }
