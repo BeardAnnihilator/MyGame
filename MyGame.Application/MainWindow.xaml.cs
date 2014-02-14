@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MyGame.ViewModels;
+using System.Windows;
 
 namespace MyGame
 {
@@ -7,10 +8,18 @@ namespace MyGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
+        public AppBootstrapper AppBootstrapper { get; protected set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            AppBootstrapper = new AppBootstrapper();
+            DataContext = AppBootstrapper;
         }
     }
 }

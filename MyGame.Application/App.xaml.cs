@@ -13,9 +13,6 @@ namespace MyGame
     /// </summary>
     public partial class App : System.Windows.Application
     {
-        public App()
-        {
-            Bootstrapper.Initialize();
-        }
+        
     }
 }

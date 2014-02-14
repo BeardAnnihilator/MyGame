@@ -17,7 +17,7 @@ namespace MyGame.ViewModels
         public SettingsViewModel(IService service)
         {
             _service = service;
-
+            _service.Start();
             InitData();
         }
 
