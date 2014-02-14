@@ -5,29 +5,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MyGame.ViewModels
 {
     public interface INotificationViewModel
     {
         string Message { get; set; }
-        ReactiveCommand Hide { get; }
-        ReactiveCommand Show { get; }
+        ICommand Hide { get; }
+        ICommand Show { get; }
     }
 
     public class NotificationViewModel : ViewModelBase, INotificationViewModel
     {
         private string _message;
-        public NotificationViewModel(IScreen screen)
+        public NotificationViewModel()
         {
             InitData();
 
             InitCommands();
         }
 
-        public ReactiveCommand Hide { get; protected set; }
+        public ICommand Hide { get; protected set; }
 
-        public ReactiveCommand Show { get; protected set; }
+        public ICommand Show { get; protected set; }
 
         public string Message
         {

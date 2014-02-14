@@ -1,13 +1,13 @@
 ﻿using MyGame.Data.Models;
 using System;
-using System.Linq;
 
 namespace MyGame.Data
 {
     public class Service : IService
     {
         private static IContext _context;
-        
+        private static bool _isActive;
+
         public Service()
         {
             _context = new Context();
@@ -16,7 +16,7 @@ namespace MyGame.Data
         public Models.GameSetting GetSetting()
         {
             var engine = _context.Engine;
-            
+
             var setting = new GameSetting();
             setting.Id = engine.Id;
             setting.Title = engine.Title;
@@ -54,13 +54,14 @@ namespace MyGame.Data
         public void Start()
         {
             _context.Init();
+            _isActive = true;
         }
 
         public void End()
         {
+            _isActive = false;
             _context.Dispose();
         }
-
 
         public System.Collections.Generic.IEnumerable<Scene> GetScenes()
         {
@@ -70,6 +71,12 @@ namespace MyGame.Data
         public System.Collections.Generic.IEnumerable<SubScene> GetSubScenes(string sceneId)
         {
             throw new NotImplementedException();
+        }
+
+        public bool IsActive
+        {
+            get { return _isActive; }
+            private set { _isActive = value; }
         }
     }
 }

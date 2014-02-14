@@ -1,16 +1,12 @@
 ﻿using MyGame.Data.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyGame.Data
 {
     public interface IService
     {
         GameSetting GetSetting();
-        
+
         Player GetPlayer();
 
         IEnumerable<Item> GetItems();
@@ -20,7 +16,7 @@ namespace MyGame.Data
         IEnumerable<Scene> GetScenes();
 
         Scene GetScene(string sceneId);
-        
+
         IEnumerable<SubScene> GetSubScenes(string sceneId);
 
         SubScene GetSubScene(string sceneId, string subSceneId);
@@ -28,5 +24,7 @@ namespace MyGame.Data
         void Start();
 
         void End();
+
+        bool IsActive { get; }
     }
 }

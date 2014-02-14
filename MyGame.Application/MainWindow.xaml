@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Xaml="clr-namespace:ReactiveUI.Xaml;assembly=ReactiveUI.Xaml"
         xmlns:views="clr-namespace:MyGame.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
         Title="My Game Data" Height="480" Width="640">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,8 +24,8 @@
                 <views:RawView x:Name="RawView"/>
             </TabItem>
         </TabControl>
-        <Xaml:RoutedViewHost Router="{Binding Router}"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
-        <!--<views:NotificationView x:Name="NotificationView" Grid.Row="1" Visibility="Visible" Background="Azure" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="50"/>-->
+        <!--<Xaml:RoutedViewHost Router="{Binding Router}"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />-->
+        <views:NotificationView x:Name="NotificationView" Grid.Row="1" Visibility="Visible" Background="Azure" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="50"/>
         <!--<rx:RoutedViewHost Router="{Binding Router}"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />-->
     </Grid>
 </Window>

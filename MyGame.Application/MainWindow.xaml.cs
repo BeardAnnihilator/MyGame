@@ -1,4 +1,6 @@
 ﻿using MyGame.ViewModels;
+using ReactiveUI;
+using ReactiveUI.Xaml;
 using System.Windows;
 
 namespace MyGame
@@ -12,14 +14,20 @@ namespace MyGame
         //{
         //    InitializeComponent();
         //}
-        public AppBootstrapper AppBootstrapper { get; protected set; }
+        public MainWindowViewModel ViewModel { get; protected set; }
 
         public MainWindow()
         {
             InitializeComponent();
 
-            AppBootstrapper = new AppBootstrapper();
-            DataContext = AppBootstrapper;
+            var viewHost = new RoutedViewHost();
+            var screen = RxApp.DependencyResolver.GetService<IScreen>();
+
+            viewHost.Router = screen.Router;
+
+            DataContext = RxApp.DependencyResolver.GetService<IMainWindowViewModel>();
+
+            
         }
     }
 }

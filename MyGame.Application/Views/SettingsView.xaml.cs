@@ -26,7 +26,7 @@ namespace MyGame.Views
     {
         public SettingsView()
         {
-            DataContext = new SettingsViewModel(new Service());
+            DataContext = new SettingsViewModel();
             InitializeComponent();
         }    
         

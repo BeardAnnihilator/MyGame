@@ -14,10 +14,10 @@ namespace MyGame.ViewModels
         private readonly IService _service;
         private GameSetting _setting;
 
-        public SettingsViewModel(IService service)
+        public SettingsViewModel()
         {
-            _service = service;
-            _service.Start();
+            _service = RxApp.DependencyResolver.GetService<IService>();
+
             InitData();
         }
 
