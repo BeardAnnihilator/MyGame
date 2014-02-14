@@ -38,6 +38,10 @@ namespace MyGame
             {
                 service.Start();
             }
+
+            var message = RxApp.DependencyResolver.GetService<INotificationViewModel>();
+            this.Router.Navigate.Execute(message);
+            
         }
 
         private void RegisterParts(IMutableDependencyResolver resolver)
@@ -45,7 +49,14 @@ namespace MyGame
             resolver.RegisterConstant(this, typeof(IScreen));
             resolver.RegisterConstant(this.Router, typeof(IRoutingState));
 
+            resolver.RegisterLazySingleton(() => new MainWindowViewModel(this), typeof(IMainWindowViewModel));
+            resolver.RegisterLazySingleton(() => new NotificationView(), typeof(INotificationView));
+
             resolver.Register(() => new Service(), typeof(IService));
+
+            resolver.Register(() => new SettingsViewModel(), typeof(ISettingsViewModel));
+            resolver.Register(() => new TreeViewModel(), typeof(ITreeViewModel));
+            resolver.Register(() => new NotificationViewModel(this), typeof(INotificationViewModel));
         }
 
         public IRoutingState Router { get; private set; }

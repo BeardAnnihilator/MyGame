@@ -21,12 +21,13 @@ namespace MyGame
             InitializeComponent();
 
             var viewHost = new RoutedViewHost();
-            var screen = RxApp.DependencyResolver.GetService<IScreen>();
+            this.Presenter.Content = viewHost;
 
+            var screen = RxApp.DependencyResolver.GetService<IScreen>();
             viewHost.Router = screen.Router;
 
             DataContext = RxApp.DependencyResolver.GetService<IMainWindowViewModel>();
-
+            
             
         }
     }

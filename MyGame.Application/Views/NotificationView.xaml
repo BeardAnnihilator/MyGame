@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:MyGame.ViewModels"
              mc:Ignorable="d" 
-             d:Height="45" d:DesignWidth="624">
-    <Grid Margin="10">
+             Height="60" d:DesignWidth="624">
+    <Grid Margin="10" Background="Orange" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="{Binding Message}" Grid.Column="0" />
-        <Button Padding="3" Content="Close" Command="{Binding CloseCommand}" Grid.Column="1"/>
+        <TextBlock Text="{Binding Message}" Grid.Column="0" FontWeight="Bold" FontSize="18" Margin="10,7,10,7"/>
+        <Button Padding="3" Content="Close" Command="{Binding Hide}" Grid.Column="1" Margin="0,7,10,7"/>
     </Grid>
 </UserControl>

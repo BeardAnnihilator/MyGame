@@ -92,29 +92,29 @@
     <Compile Include="Design\SettingsViewModelDesign.cs" />
     <Compile Include="Extensions\ViewForMixins.cs" />
     <Compile Include="Utility.cs" />
+    <Compile Include="ViewModels\IMainWindowViewModel.cs" />
+    <Compile Include="ViewModels\INotificationViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\ISettingsViewModel.cs" />
+    <Compile Include="ViewModels\ITreeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\NotificationViewModel.cs" />
+    <Compile Include="ViewModels\NotificationViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="ViewModels\WelcomeViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Views\INotificationView.cs" />
     <Compile Include="Views\NotificationView.xaml.cs">
       <DependentUpon>NotificationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RawView.xaml.cs">
-      <DependentUpon>RawView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WelcomeView.xaml.cs">
-      <DependentUpon>WelcomeView.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -129,10 +129,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\NotificationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\RawView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,10 +137,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TreeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\WelcomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

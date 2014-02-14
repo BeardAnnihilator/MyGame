@@ -9,26 +9,20 @@ using System.Windows.Input;
 
 namespace MyGame.ViewModels
 {
-    public interface INotificationViewModel
-    {
-        string Message { get; set; }
-        ICommand Hide { get; }
-        ICommand Show { get; }
-    }
-
     public class NotificationViewModel : ViewModelBase, INotificationViewModel
     {
         private string _message;
-        public NotificationViewModel()
+        public NotificationViewModel(IScreen screen)
         {
-            InitData();
+            HostScreen = screen;
 
+            InitData();
             InitCommands();
         }
 
-        public ICommand Hide { get; protected set; }
+        public ReactiveCommand Hide { get; protected set; }
 
-        public ICommand Show { get; protected set; }
+        public ReactiveCommand Show { get; protected set; }
 
         public string Message
         {
@@ -52,6 +46,13 @@ namespace MyGame.ViewModels
         {
             Hide = new ReactiveCommand();
             Show = new ReactiveCommand();
+        }
+
+        public IScreen HostScreen { get; private set; }
+
+        public string UrlPathSegment
+        {
+            get { return "notification"; }
         }
     }
 }

@@ -4,15 +4,12 @@ using ReactiveUI;
 
 namespace MyGame.ViewModels
 {
-    public interface ISettingsViewModel 
-    {
-        GameSetting Setting { get; }
-    }
+   
 
     public class SettingsViewModel : ViewModelBase, ISettingsViewModel
     {
         private readonly IService _service;
-        private GameSetting _setting;
+        private ISetting _setting;
 
         public SettingsViewModel()
         {
@@ -31,10 +28,10 @@ namespace MyGame.ViewModels
             throw new System.NotImplementedException();
         }
 
-        public GameSetting Setting
+        public ISetting Setting
         {
             get { return _setting; }
-            set { this.RaiseAndSetIfChanged<SettingsViewModel, GameSetting>(ref _setting, value); }
+            set { this.RaiseAndSetIfChanged<SettingsViewModel, ISetting>(ref _setting, value); }
         }
     }
 }

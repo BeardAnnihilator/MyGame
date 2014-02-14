@@ -5,7 +5,7 @@ namespace MyGame.Design
 {
     internal class SettingsViewModelDesign : ISettingsViewModel
     {
-        GameSetting ISettingsViewModel.Setting
+        ISetting ISettingsViewModel.Setting
         {
             get
             {
@@ -16,7 +16,7 @@ namespace MyGame.Design
                     GameSpeed = 1,
                     GoogleTrackingCode="DesignTrackingCode"
                 };
-            }
+            } 
         }
     }
 }

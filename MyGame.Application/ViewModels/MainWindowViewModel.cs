@@ -22,7 +22,5 @@ namespace MyGame.ViewModels
         }
     }
 
-    internal interface IMainWindowViewModel
-    {
-    }
+    
 }
