@@ -6,7 +6,7 @@
     <Item Id="Mouse" IconId="Mouse" Description="Mouse" />
     <Item Id="TrashBin">
       <ElementTemplate>
-        <UIPlaceholder AcceptsItems="Cat;Mouse" PlaceholderBehaviour="Trash"/>
+        <UIPlaceholder AcceptsItems="Cat;Mouse" PlaceholderBehaviour="Trash" />
       </ElementTemplate>
     </Item>
   </Items>
