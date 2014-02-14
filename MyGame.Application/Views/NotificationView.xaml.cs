@@ -2,7 +2,6 @@
 using MyGame.ViewModels;
 using ReactiveUI;
 using System;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace MyGame.Views
