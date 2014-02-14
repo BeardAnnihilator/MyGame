@@ -1,6 +1,6 @@
 ﻿namespace MyGame.Data.Models
 {
-    internal interface ISetting
+    public interface ISetting
     {
         string Id { get; set; }
 

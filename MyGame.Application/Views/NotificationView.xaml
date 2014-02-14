@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="MyGame.Views.NotificationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:MyGame.ViewModels"
+             mc:Ignorable="d" 
+             d:Height="45" d:DesignWidth="624">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding Message}" Grid.Column="0" />
+        <Button Padding="3" Content="Close" Command="{Binding CloseCommand}" Grid.Column="1"/>
+    </Grid>
+</UserControl>

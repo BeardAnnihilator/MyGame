@@ -25,7 +25,7 @@ namespace MyGame.Data
         public void Init()
         {
             var serializer = new XmlSerializer(typeof(GameEngine));
-            using (var reader = new StreamReader("GameEngine.xml"))
+            using (var reader = new StreamReader(Resources.XmlFileName))
             {
                 try
                 {
